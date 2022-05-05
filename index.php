@@ -49,6 +49,19 @@ $tasks = array(
         'is_done'   => false,
     ),
 );
+
+// Считает кол-во задач в проекте
+function countProjectNumberOfTasks( $tasks, $project ) {
+    $count_of_tasks = 0;
+
+    foreach( $tasks as $task ) {
+        if ( $task['category'] === $project ) {
+            $count_of_tasks++;
+        }
+    }
+
+    return $count_of_tasks;
+}
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -93,7 +106,7 @@ $tasks = array(
                         <?php foreach( $projects as $project ) : ?>
                             <li class="main-navigation__list-item">
                                 <a class="main-navigation__list-item-link" href="#"><?php echo $project; ?></a>
-                                <span class="main-navigation__list-item-count">0</span>
+                                <span class="main-navigation__list-item-count"><?php echo countProjectNumberOfTasks( $tasks, $project ); ?></span>
                             </li>
                         <?php endforeach; ?>
                     </ul>
