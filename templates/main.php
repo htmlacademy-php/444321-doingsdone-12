@@ -6,7 +6,7 @@
             <?php foreach( $projects as $project ) : ?>
                 <li class="main-navigation__list-item">
                     <a class="main-navigation__list-item-link" href="#"><?php echo htmlspecialchars( $project ); ?></a>
-                    <span class="main-navigation__list-item-count"><?php echo countProjectNumberOfTasks( $tasks, $project ); ?></span>
+                    <span class="main-navigation__list-item-count"><?php echo count_project_number_of_tasks( $tasks, $project ); ?></span>
                 </li>
             <?php endforeach; ?>
         </ul>
@@ -43,7 +43,7 @@
         <?php foreach( $tasks as $task ) : ?>
             <?php if ( $show_complete_tasks === 0 && $task['is_done'] ) : continue; ?>
             <?php else : ?>
-                <tr class="tasks__item task <?php $task['is_done'] ? 'task--completed' : ''; ?>">
+                <tr class="tasks__item task <?php echo $task['is_done'] ? 'task--completed' : ''; ?> <?php echo is_urgency_task( $task['deadline'] ) ? 'task--important' : ''; ?>">
                     <td class="task__select">
                         <label class="checkbox task__checkbox">
                             <input class="checkbox__input visually-hidden" type="checkbox" checked>
