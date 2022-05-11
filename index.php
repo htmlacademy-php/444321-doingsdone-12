@@ -13,7 +13,7 @@ $projects = array(
 $tasks = array(
     array(
         'name' => 'Собеседование в IT компании',
-        'deadline'  => '01.12.2019',
+        'deadline'  => '12.05.2022',
         'category'  => 'Работа',
         'is_done'   => false,
     ),
@@ -37,7 +37,7 @@ $tasks = array(
     ),
     array(
         'name' => 'Купить корм для кота',
-        'deadline'  => '	null',
+        'deadline'  => 'null',
         'category'  => 'Домашние дела',
         'is_done'   => false,
     ),
